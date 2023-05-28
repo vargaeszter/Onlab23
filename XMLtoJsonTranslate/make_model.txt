@@ -1,0 +1,27 @@
+# Tutorials
+# https://opennmt.net/OpenNMT-py/quickstart.html
+# https://github.com/OpenNMT/OpenNMT-py
+
+# Check Python version
+python --version
+## Python 3.10.7
+
+# Install OpenNMT
+pip install --upgrade pip
+pip install torch==1.13.1
+pip install -r requirements.opt.txt
+pip install OpenNMT-py
+
+# Create vocab
+onmt_build_vocab -config xml_json.yaml -n_sample 10000
+// Error if files already exist
+
+
+# Train
+# delete/comment out gpu otherwise error
+onmt_train -config xml_json.yaml
+
+
+# Translate
+# delete gpu otherwise error
+onmt_translate -model run/model_step_10000.pt -src src_xml_test.xml -output pred.txt  -verbose

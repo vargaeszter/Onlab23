@@ -1,0 +1,27 @@
+## Where the samples will be written
+save_data: toy-ende/run/example
+## Where the vocab(s) will be written
+src_vocab: toy-ende/run/example.vocab.src
+tgt_vocab: toy-ende/run/example.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: src_xml_train.xml
+        path_tgt: tg_json_train.json
+    valid:
+        path_src: src_xml_val.xml
+        path_tgt: tg_json_val.json
+
+# Vocabulary files that were just created
+src_vocab: run/example.vocab.src
+tgt_vocab: run/example.vocab.tgt
+
+
+# Where to save the checkpoints
+save_model: run/model
+save_checkpoint_steps: 10000
+train_steps: 10000
+valid_steps: 1000
